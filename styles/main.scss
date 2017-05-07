@@ -1,0 +1,116 @@
+// bower:scss
+@import "bower_components/foundation-sites/scss/foundation.scss";
+// endbower
+@include foundation-everything;
+
+
+body {
+    /*background-color: rgb(48,182,222);*/
+    @include breakpoint(large) {
+        margin: 0px 100px;
+    }
+}
+
+.no-js {
+    @include breakpoint(small only) {
+        .top-bar {
+            display: none;
+        }
+    }
+    @include breakpoint(medium) {
+        .title-bar {
+            display: none;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    line-height: rem-calc(50);
+    font-weight: 500;
+    @include breakpoint(small only) {
+        line-height: rem-calc(30);
+    }
+}
+
+#menu {
+    width: 100%;
+    margin-top: 0px;
+    background-color: #fff;
+    @include breakpoint(small only) {
+        box-shadow: 1px 1px 9px #000;
+    }
+    li a {
+        color: #000;
+    }
+}
+
+$grey:#cfcfcf;
+
+$large-article-header-bg: url('/images/hounds-of-love-rolly.jpg');
+$logo-header-bg: url('/images/paw-idea.png');
+$large-article-header-color: $white;
+$large-article-header-height: rem-calc(500);
+.large-article-header {
+    background: $large-article-header-bg no-repeat top;
+    background-size: cover;
+    height: $large-article-header-height;
+    position: relative;
+    @include breakpoint(small only) {
+        height: ($large-article-header-height / 1.5);
+    }
+}
+
+h1.logo {
+    background: $logo-header-bg no-repeat top right;
+    background-size: 14%;
+    margin-right: 100px;
+}
+
+.large-article-header-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: rem-calc(50);
+    @include breakpoint(small only) {
+        bottom: rem-calc(20);
+    }
+}
+.sections {
+    margin-top: 60px;
+}
+
+section {
+    margin-top: rem-calc(40);
+    h1 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+}
+footer {
+  color: $grey;
+  font-size: 0.8em;
+}
+#scroll-to-top {
+    width: 40px;
+    background-color: #000;
+    text-align: center;
+    padding: 7px 15px;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+
+    a {
+      color: #fff;
+    }
+}
