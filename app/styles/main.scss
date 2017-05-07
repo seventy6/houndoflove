@@ -3,90 +3,167 @@
 // endbower
 @include foundation-everything;
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
-/* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    /*background-color: rgb(48,182,222);*/
+    @include breakpoint(large) {
+        margin: 0px 100px;
+    }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.no-js {
+    @include breakpoint(small only) {
+        .top-bar {
+            display: none;
+        }
+    }
+    @include breakpoint(medium) {
+        .title-bar {
+            display: none;
+        }
+    }
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Josefin Sans', sans-serif;
 }
+
+h1 {
+    line-height: rem-calc(50);
+    font-weight: 500;
+    @include breakpoint(small only) {
+        line-height: rem-calc(30);
+    }
+}
+
+#menu {
+    width: 100%;
+    margin-top: 0px;
+    background-color: #fff;
+    @include breakpoint(small only) {
+        box-shadow: 1px 1px 9px #000;
+    }
+    li a {
+        color: #000;
+    }
+}
+
+
+$large-article-header-bg: url('/images/hounds-of-love-rolly.jpg');
+$logo-header-bg: url('/images/paw-idea.png');
+$large-article-header-color: $white;
+$large-article-header-height: rem-calc(500);
+.large-article-header {
+    background: $large-article-header-bg no-repeat top;
+    background-size: cover;
+    height: $large-article-header-height;
+    position: relative;
+    @include breakpoint(small only) {
+        height: ($large-article-header-height / 1.5);
+    }
+}
+
+h1.logo {
+    background: $logo-header-bg no-repeat top right;
+    background-size: 14%;
+    margin-right: 100px;
+}
+
+.large-article-header-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: rem-calc(50);
+    @include breakpoint(small only) {
+        bottom: rem-calc(20);
+    }
+    h1 {
+        line-height: rem-calc(50);
+        color: $large-article-header-color;
+        font-weight: 600;
+        @include breakpoint(small only) {
+            line-height: rem-calc(30);
+        }
+    }
+    h2 {
+        color: $large-article-header-color;
+    }
+}
+
+.sections {
+    margin-top: 60px;
+}
+
+section {
+    margin-top: rem-calc(40);
+    h1 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+}
+
 
 /* Custom page footer */
+
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
-  margin: 30px 0;
+    margin: 30px 0;
 }
+
 
 /* Main marketing message and sign up button */
+
 .jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+    }
 }
+
 
 /* Supporting marketing content */
+
 .marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
+    margin: 40px 0;
+    p + h4 {
+        margin-top: 28px;
+    }
 }
 
+
 /* Responsive: Portrait tablets and up */
+
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+    .container {
+        max-width: 730px;
+    }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
 }
