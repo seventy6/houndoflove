@@ -341,7 +341,8 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'fonts/{,*/}*.*',
             'scripts/*.js',
-            'styles/*.*'
+            'styles/*.*',
+            'CNAME'
           ]
         }, {
           expand: true,
