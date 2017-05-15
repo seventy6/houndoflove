@@ -45,6 +45,7 @@ h1 {
     width: 100%;
     margin-top: 0px;
     background-color: #fff;
+    font-weight: 500;
     @include breakpoint(small only) {
         box-shadow: 1px 1px 9px #000;
     }
@@ -56,7 +57,6 @@ h1 {
 $grey:#cfcfcf;
 
 $large-article-header-bg: url('/images/hounds-of-love-rolly.jpg');
-$logo-header-bg: url('/images/paw-idea.png');
 $large-article-header-color: $white;
 $large-article-header-height: rem-calc(500);
 .large-article-header {
@@ -67,12 +67,6 @@ $large-article-header-height: rem-calc(500);
     @include breakpoint(small only) {
         height: ($large-article-header-height / 1.5);
     }
-}
-
-h1.logo {
-    background: $logo-header-bg no-repeat top right;
-    background-size: 14%;
-    margin-right: 100px;
 }
 
 .large-article-header-content {
@@ -100,6 +94,13 @@ section {
 footer {
   color: $grey;
   font-size: 0.8em;
+}
+#intro {
+    h1 {
+        font-size: 4em;
+        font-weight: 800;
+        color: #d4280c;
+    }
 }
 #scroll-to-top {
     width: 40px;
