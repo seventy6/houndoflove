@@ -3,12 +3,15 @@
 // endbower
 @include foundation-everything;
 
+$blue : #4267b2;
+$grey:#cfcfcf;
 
 body {
     /*background-color: rgb(48,182,222);*/
     @include breakpoint(large) {
         margin: 0px 100px;
     }
+    font-size: 110%;
 }
 
 .no-js {
@@ -37,14 +40,18 @@ h1 {
     line-height: rem-calc(50);
     font-weight: 500;
     @include breakpoint(small only) {
-        line-height: rem-calc(30);
+        line-height: rem-calc(70);
     }
 }
-
+hr {
+    padding: 20px 0;
+}
 #menu {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
     width: 100%;
     margin-top: 0px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
     @include breakpoint(small only) {
         box-shadow: 1px 1px 9px #000;
@@ -52,9 +59,17 @@ h1 {
     li a {
         color: #000;
     }
+    i {
+        color: $blue;
+    }
+    li a:after {
+        content: '.';
+        margin-left: 4px;
+        color: #da3116;
+        font-weight: 800;
+    }
 }
 
-$grey:#cfcfcf;
 
 $large-article-header-bg: url('/images/hounds-of-love-rolly.jpg');
 $large-article-header-color: $white;
@@ -66,6 +81,18 @@ $large-article-header-height: rem-calc(500);
     position: relative;
     @include breakpoint(small only) {
         height: ($large-article-header-height / 1.5);
+    }
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.63);
+    h1 {
+        position: absolute;
+        font-size: 4em;
+        font-weight: 800;
+        bottom: 40px;
+    }
+    h4 {
+        position: absolute;
+        bottom: 10px;
     }
 }
 
@@ -79,11 +106,11 @@ $large-article-header-height: rem-calc(500);
     }
 }
 .sections {
-    margin-top: 60px;
+    margin-top: 0px;
 }
 
 section {
-    margin-top: rem-calc(40);
+    margin-bottom: rem-calc(40);
     h1 {
         font-size: 2em;
     }
@@ -94,13 +121,6 @@ section {
 footer {
   color: $grey;
   font-size: 0.8em;
-}
-#intro {
-    h1 {
-        font-size: 4em;
-        font-weight: 800;
-        color: #d4280c;
-    }
 }
 #scroll-to-top {
     width: 40px;
