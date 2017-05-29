@@ -342,7 +342,8 @@ module.exports = function (grunt) {
             'fonts/{,*/}*.*',
             'scripts/*.js',
             'styles/*.*',
-            'CNAME'
+            'CNAME',
+            'sitemap.xml'
           ]
         }, {
           expand: true,
